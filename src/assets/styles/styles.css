@@ -1,0 +1,262 @@
+body {
+	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	font-weight: 400;
+	background-color: #fff;
+	font-size: 16px;
+	color: #38342B;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	color: #337ab7;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a.btn:hover {
+	color: #b1d5f5;
+}
+
+.btn-success {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+
+a.btn-outline-warning:hover,
+a.btn-outline-warning:focus,
+a.btn-outline-warning:active,
+a.btn-warning:hover,
+a.btn-warning:focus,
+a.btn-warning:active {
+    color: #3e3737;
+}
+
+li.au-target {
+	list-style: none;
+}
+
+table#risk {
+    margin: 25px auto;
+}
+
+table#risk th {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+table#risk td {
+    border: 1px solid #d2cece;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+    margin: 0px;
+    border-radius: 4px;
+}
+
+table#risk td.note {
+    background-color: #b1f9b1;
+}
+
+table#risk td.low {
+    background-color: #ffffa4;
+}
+
+table#risk td.medium {
+    background-color: #ffca69;
+}
+
+table#risk td.high {
+    background-color: #ff6c6c;
+}
+
+table#risk td.critical {
+    background-color: red;
+    color: #fff;
+}
+
+table#risk td.x,
+table#risk td.y {
+    background-color: #fff;
+}
+
+table#risk .impact,
+table#risk .likelihood {
+    font-weight: bold;
+    font-varient: italic;
+}
+
+table#risk .noborder {
+    border: none;
+}
+
+.processing-message {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 1.5em;
+    color: #657cf9;
+}
+
+.processing-container {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin-left: -82px;
+	margin-top: -53px;
+	z-index: 1000;
+}
+
+.breadcrumb {
+    background-color: #f5f7ff;
+}
+
+.breadcrumb li {
+    margin-right: 25px;
+}
+
+.lead ul li {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+div#navbarWorker {
+	font-size: 0.75em;
+    margin-left: 1em;
+    display: block;
+    text-align: center;
+}
+
+div#navbarWorker .funding {
+	display: inline-block;
+	margin-bottom: 4px;
+}
+
+div#navbarWorker .reward-pool {
+    display: inline-block;
+    font-size: 1.5em;
+	text-align: center;
+	margin-right: 0.5em;
+}
+
+div#navbarWorker .reward-funds {
+	font-size: 2em;
+	border: thin solid #eee;
+    padding: 6px 10px;
+}
+
+div#navbarWorker .reward-funds .currency {
+	font-size: 0.5em;
+	vertical-align: middle;
+	margin-left: 3px;
+}
+
+div#navbarWorker .reward-funds .currency-prefix {
+    vertical-align: text-top;
+    font-size: 0.5em;
+}
+
+div#navbarWorker .worker {
+	display: inline-block;
+	margin-left: 1em;
+	vertical-align: middle;
+	margin-bottom: 4px;
+}
+
+@media all and (max-width: 775px) {
+	div#navbarWorker {
+		display: inline-flex
+	}
+
+	div#navbarWorker .worker {
+		display: none;
+	}
+}
+
+@media all and (max-width: 500px) {
+	div#navbarWorker { 
+		margin-left: auto;
+		margin-right: 0px;
+	}
+
+	div#navbarWorker .reward-pool {
+		font-size: 1em;
+	}
+}
+
+/*PL styles*/ 
+.navbar-toggler {
+    padding: 0.25rem 0.45rem!important; 
+}
+.navbar-light .navbar-toggler.navbar-toggler { 
+    background:#fafafa;
+    border: 0 none;
+}
+.navbar-light .navbar-toggler-icon { 
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")!important;
+}
+.navbar {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+#page-wrapper {
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+.dex-2,
+.dex-nobg { 
+	padding: 7rem 3rem!important;
+}
+
+.dex-bg {
+	background-size: cover;
+	color: white; 
+	padding: 11rem 3rem!important;
+}
+
+.bg-index {
+	background: url(/src/assets/images/dex-index.jpg) center center no-repeat;
+}
+
+.bg-funds {
+	background: url(/src/assets/images/dex-transparency.jpg) center center no-repeat;
+}
+
+.bg-news {
+	/* background: url(/src/assets/images/dex-chart.jpg) center center no-repeat; */
+	color: #333;
+}
+
+p {
+	font-size: 19px; 
+	font-weight: 300;
+	line-height: 34px;
+}
+footer {
+	margin-top: 100px;  
+}
+footer p {
+	font-size: 16px;
+}
+@media all and (max-width: 600px){
+	.dex-2,
+	.dex-1 { 
+		padding: 9rem 1.5rem!important; 
+	}
+	h1,
+	h2,
+	h3,
+	.display-5,
+	.display-4 {
+		font-size: 28px!important;
+		font-weight: normal!important;
+		line-height: 32px!important;
+	}
+	nav .btn {
+		width: 100%;
+		margin-top: 5px;
+	}
+}

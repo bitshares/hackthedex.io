@@ -1,0 +1,69 @@
+<template>
+	<require from="elements/processing"></require>
+	<require from="elements/footer-bar"></require>
+	<require from="converters/date-format"></require>
+	<processing processing.bind="processing"></processing>
+
+	<div class="row">
+			<div class="col-lg-12">
+					<div class="col-lg-12 text-center dex-nobg"> 
+						<h1 class="display-4">Exchange Alerts</h1>
+						<p class="lead">If you manage a BitShares-based exchange, you can use this form to signup for alerts.</p>
+					</div>
+					<div class="col-lg-12 bg-light">
+						<div class="col-md-12 text-left dex-2">
+							<p class="lead text-center">All submissions will be verified. If you have issues using this form, you may email us directly at <a href="mailto:bounty@hackthedex.io">bounty@hackthedex.io</a></p>
+							
+							<form submit.delegate="submit()">
+								<div class="form-group">
+									<label for="exchange">Name of Exchange</label>
+									<input value.bind="submission.exchange" type="text" class="form-control" id="exchange" aria-describedby="exchangeHelp" required>
+								</div>
+								
+								<div class="form-group">
+									<label for="website">Exchange Website</label>
+									<input value.bind="submission.website" type="text" class="form-control" id="website" aria-describedby="websiteHelp" placeholder="https://" required>
+								</div>
+								
+								<div class="form-group">
+									<label for="name">Your Name</label>
+									<input value.bind="submission.name" type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your name" required>
+								</div>
+								
+								<div class="form-group">
+									<label for="email">Your Email Address</label>
+									<input value.bind="submission.email" type="email" class="form-control" id="email" placeholder="Enter your email" required>
+									<small id="emailHelp" class="form-text text-muted">Please use an email address on the domain of your exchange (e.g. username@exchange.com)</small>
+								</div>
+
+								<div class="form-group">
+									<label for="role">Your Role</label>
+									<input value.bind="submission.role" type="text" class="form-control" id="role" placeholder="Enter your role (CEO, CTO, Programmer, etc.)" required>
+								</div>
+
+								<div class="form-group">
+									<label for="howLongHasExchangeBeenActive">How Long Has Your Exchange Been Active?</label>
+									<input value.bind="submission.howLongHasExchangeBeenActive" type="text" class="form-control" id="howLongHasExchangeBeenActive" aria-describedby="roleHelp" placeholder="" required>
+								</div>
+								
+								<div class="form-group">
+									<label for="howOftenDoYouPullChanges">How Often Do You Pull Changes from Core/UI?</label>
+									<input value.bind="submission.howOftenDoYouPullChanges" type="text" class="form-control" id="howOftenDoYouPullChanges" aria-describedby="roleHelp" placeholder="" required>
+								</div>
+								
+								<div class="form-group">
+									<label for="githubRepository">If Your Exchange Has a GitHub Repository, Enter the URL</label>
+									<input value.bind="submission.githubRepository" type="text" class="form-control" id="githubRepository" aria-describedby="roleHelp" placeholder="https://github.com/">
+								</div>
+								
+								<button type="submit" class="btn btn-primary" disabled.bind="disableSubmit">Submit</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer-bar />
+</template>

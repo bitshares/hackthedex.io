@@ -1,0 +1,24 @@
+<template>
+	<require from="elements/processing"></require>
+	<require from="elements/footer-bar"></require>
+	<require from="converters/date-format"></require>
+	<processing processing.bind="processing"></processing>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="col-lg-12 text-center dex-nobg"> 
+				<h1 class="display-4">Testnet</h1>
+				<p class="lead">Setting up a BitShares testnet</p>
+			</div>
+			<div class="col-lg-12 bg-light">
+				<div class="col-md-12 text-left dex-2">
+					<h2 class="display-5">Getting Started</h2>
+					<p class="lead">If you are investigating a possible attack vector, it is necessary to avoid exploiting it in a public space. Testing exploits on mainnet or public testnet can be dangerous as transactions are publicly broadcast, and could potentially disqualify you from earning bounty rewards for your efforts.<br /><br />It is advisable that you setup a private testnet in order to test your vulnerabilities locally.
+					<br /><br />
+					<a href="http://docs.bitshares.org/testnet/private-testnet.html" class="btn btn-primary" target="_blank">Setup a Private Testnet <i class="fa fa-external-link"></i></a></p>
+					<p class="lead">If you need help, try reaching out to the community on <a href="https://bitsharestalk.org/" target="_blank">BitSharesTalk.org</a> or <a href="https://t.me/BitSharesDEX" target="_blank">Telegram</a>.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer-bar />
+</template>

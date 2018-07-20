@@ -1,251 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Hack the DEX: a BitShares Worker Proposal</title>
-    <meta charset="utf-8"/>
-    <link href="/assets/styles.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-    <meta name="og:description" content="">
-    <meta name="og:title" content="Hack the DEX: a BitShares Worker Proposal">
-    <meta name="og:url" content="https://hackthedex.io/">
-    <meta name="og:type" content="article">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Hack the DEX: a BitShares Worker Proposal">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:url" content="https://hackthedex.io/">
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hack the DEX - BitShares Bug Bounty Program</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">	
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href='src/assets/styles/styles.css' rel='stylesheet' type='text/css'>
+  </head>
 
-<div id="header">
-   <h1>
-       Hack the DEX
-       <br /><small>a BitShares Worker Proposal</small>
-    </h1>
-</div>
+  <body aurelia-app="main">
 
-<div id="content">
+    <div class="splash processing-container" if.bind="processing">
+      <div class="centered processing-block" if.bind="processing">
+        <div class="preloader"></div>
+        <div class="processing-message text-center">
+          <img src="/src/assets/images/preloader.gif" /><br />Loading...
+        </div>
+      </div>
+    </div>
 
-<h2 style="margin-left: auto; margin-right: auto; font-size: smaller; text-align: right;">
-    Proposal Status: Acquiring Community Feedback<br />
-	by Matt Beckman<br />
-	BitShares App Contributor<br />
-	<a href="https://github.com/mattbeckman">github</a> • </a><a href="https://twitter.com/mattbeckman" target="_blank">twitter</a> • <a href="https://steemit.com/@netdragonx" target="_blank">steemit</a>
-</h2>
-
-<h2>Overview</h2>
-<div>BitShares is a decentralized exchange (DEX) built on top of delegated proof-of-stake (DPoS) blockchain technology. With all financial technology in the blockchain space, a major concern for users and traders is security.</div>
-
-<div>If someone found a critical bug in the DEX, they might be tempted to exploit the bug, and attempt to steal funds from unsuspecting users. Without a public bug bounty system, hackers do not have an obvious path of disclosure for reporting their findings. They also do not have any incentive to share their exploits and techniques, rather than using them for personal gain.</div>
-
-<div>
-    With this proposal, we’d like to start a BitShares bug bounty program for security researchers 
-    and penetration testers (...aka hackers!) to disclose important security 
-    vulnerabilities they find within the BitShares core protocol, reference wallet, and related code repositories.</div>
-
-<div>The proposal will use allocated funds to reward those that step forward with exploits, relative to the overall risk assessment of the exploit. The higher the payout for critical bugs, the more incentive there will be to attract higher quality researchers, and ultimately providing better security coverage for the DEX. </div>
-
-<div>Funds will also be used to build and maintain a basic public website for reporting vulnerabilities. The website will include all the information needed for researchers to report a vulnerability, as well as an archive of bounty reports and a leaderboard to encourage a little friendly hacker competition. It will also lay the groundwork for future HackTheDEX worker proposals to improve the security and safety of BitShares as a whole.</div>
-
-<div>Worker proposal funds will be held in an escrow account and unused funds will be refunded back to the network at the end of the proposal period.</div>
-
-<h2>Rules</h2>
-<div>
-<ul>
-	<li>Public disclosure of a vulnerability makes it ineligible for a bounty</li>
- 	<li>Issues that have already been submitted by another user or are already known to repository maintainers are not eligible for bounty rewards</li>
-	<li>Members of any audit panel, and anyone involved with HackTheDEX.io, are not eligible to win bounty rewards</li>
-	<li>BitShares marketing websites and 3rd party websites/gateways are NOT part of the bounty program</li>
-	<li>A number of variables contribute to determining if a disclosed vulnerability is eligible for a reward. How the vulnerability is scored, and the methods used to determine the score, are at the sole discretion of the panel chosen to audit the report</li>
-</ul>
-</div>
-
-<a name="audit-panel" />
-<h2>Audit Panel</h2>
-<div>
-    When a vulnerability is disclosed, care must be taken to minimize public 
-    disclosure until the issue can be verified by key developers and a bug fix can be released. 
-</div>
-<div>
-    Auditors that take the time to perform a thorough review of the vulnerability and/or write code to fix the bug 
-    will also be compensated appropriately. Sometimes, but not always, an auditor may need to work with the researcher(s) to 
-    come up with a solution to lock down the vulnerability.
-</div>
-<div>
-    For transparency, each awarded bounty will include a public report along with which auditors were involved.
-</div>
-<h3>Audit Panel Selection</h3>
-<div>
-	When a vulnerability is reported, the panel will be selected from available <i>appropriately experienced and trusted</i> contributors within 
-	the respective BitShares development community. The primary points of contact below will be asked to coordinate appropriately experienced and active developers to audit the report and resolve all issues as quickly and safely as possible.
-	<ul>
-		<li><strong>BitShares Core Team:</strong> <a href="https://steemit.com/@fox">Ryan R. Fox</a></li>
-		<li><strong>BitShares UI Team:</strong> <a href="https://steemit.com/@billbutler">Bill Butler</a></li>
-		<li><strong>BitShares JS:</strong> <a href="https://steemit.com/@svk">Svk</a></li>
-		<li><strong>BitShares Python:</strong> <a href="https://steemit.com/@xeroc">Fabian Schuh</a></li>
-	</ul>
-</div>
-
-
-<h2>Rewards</h2>
-<div>Rewards paid out will vary based on severity (using the <a href="https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology">OWASP method</a>).</div>
-
-<table id="risk">
-<tbody>
-<th colspan="5">
-    Overall Risk Severity
-</th>
-<tr>
-<td class="impact" rowspan="3">Impact</td>
-<td class="high y">HIGH</td>
-<td class="medium">Medium</td>
-<td class="high">High</td>
-<td class="critical">Critical</td>
-</tr>
-<tr>
-<td class="medium y">MEDIUM</td>
-<td class="low">Low</td>
-<td class="medium">Medium</td>
-<td class="high">High</td>
-</tr>
-<tr>
-<td class="low y">LOW</td>
-<td class="note">Note</td>
-<td class="low">Low</td>
-<td class="medium">Medium</td>
-</tr>
-<tr>
-<td class="noborder" colspan="2"></td>
-<td class="low x">LOW</td>
-<td class="medium x">MEDIUM</td>
-<td class="high x">HIGH</td>
-</tr>
-<tr>
-<td class="noborder" colspan="2"></td>
-<td class="likelihood" colspan="3">Likelihood</td>
-</tr>
-</tbody>
-</table>
-<div>
-    Rewards will be paid out in bitUSD based on available worker proposal funds. 
-    The audit panel will use the following values as a guideline to decide an appropriate reward:
-
-  <ul>
- 	<li><b>Critical</b>: up to 25,000 bitUSD</li>
- 	<li><b>High</b>: up to 10,000 bitUSD</li>
- 	<li><b>Medium</b>: up to 5,000 bitUSD</li>
- 	<li><b>Low</b>: up to 1,000 bitUSD</li>
- 	<li><b>Note</b>: up to 100 bitUSD</li>
-  </ul>
-</div>
-
-<div>
-    Researchers who have been awarded bounties will also be listed on the hackthedex.io leaderboard.
-</div>
-
-<div>
-    To qualify for higher rewards, the submission should include everything the auditing panel 
-    would need to reproduce and verify the vulnerability. The submission should also be 
-    well-prepared and of high quality so that it can be shared with the community as part 
-    of our transparency process.
-</div>
-
-<h2>Open Bounties</h2>
-<div>Security vulnerability bounties apply to the following source code repositories, with some exceptions:
-<ul>
-    <li><a href="https://github.com/bitshares/bitshares-core">bitshares-core</a></li>
-    <li><a href="https://github.com/bitshares/bitshares-fc">bitshares-fc</a></li>
-    <li><a href="https://github.com/bitshares/bitshares-ui">bitshares-ui</a></li>
-    <li><a href="https://github.com/bitshares/bitsharesjs">bitsharesjs</a></li>
-    <li><a href="https://github.com/bitshares/bitsharesjs-ws">bitsharesjs-ws</a></li>
-    <li><a href="https://github.com/bitshares/python-bitshares">python-bitshares</a></li>
-</ul>
-</div>
-<h3><b>Protocol security</b></h3>
-<div>
-<ul>
- 	<li>Graphene vulnerabilities</li>
- 	<li>Validations of blocks, transactions and messages</li>
- 	<li>Transaction execution</li>
- 	<li>Message calls</li>
-</ul>
-</div>
-<div>An example of a potential issue in this category is Bitcoin’s “zero-day” <a href="https://en.bitcoin.it/wiki/CVE-2010-5139">flaw</a>, which required a hard-fork.</div>
-<h3><b>Network security</b></h3>
-<div>
-<ul>
- 	<li>Finney attacks</li>
- 	<li>Sybil attacks</li>
- 	<li>Replay attacks</li>
- 	<li>Transaction / messages malleability</li>
- 	<li>(global) DoS</li>
-</ul>
-</div>
-
-<div>Here is an example from <a href="https://en.bitcoin.it/wiki/CVE-2012-4684">bitcoin</a> of a global network based DoS scenario.</div>
-
-<h3><b>Node security</b></h3>
-<div>Attacks on witness or public API nodes</div>
-<div>
-<ul>
- 	<li>DoS / resource abuse</li>
- 	<li>Account / wallet address gathering/probing</li>
- 	<li>Broadcast / withhold attacks</li>
-</ul>
-</div>
-
-<div>DoS example from <a href="https://bitcointalk.org/index.php?topic=287351">bitcoin</a>. DoS / Resource abuse example from <a href="https://en.bitcoin.it/wiki/CVE-2013-2293">bitcoin</a>.</div>
-
-<h3><b>Client application security</b></h3>
-<div>This category addresses more classical security issues:</div>
-<div>
-<ul>
- 	<li>Data type overflow / wrap around, e.g. integer overflow</li>
- 	<li>Concurrency, e.g. synchronization, state, races</li>
- 	<li>Severe issues related to external libraries used</li>
-</ul>
-</div>
-
-<div>Here is an <a href="http://bitcoinmagazine.com/3668/bitcoin-network-shaken-by-blockchain-fork/">example</a> of a problem hidden in an external library.</div>
-
-<h2>Fund Allocation</h2>
-<div>
-    Funds will be held within an escrow account managed by the <a href="http://www.bitshares.foundation/">BitShares Blockchain Foundation</a>.
-    At the end of the proposal period, <strong>any excess funds will be returned to the BitShares reserve pool</strong>.
-</div>
-<div>
-    <ul>
-        <li><strong>Total Budget: 250,000 bitUSD</strong>
-        <br />Refundable reserve via a BitShares Foundation <a href="http://www.bitshares.foundation/worker/" target="_blank">Budget Worker</a><br />&nbsp;</li>
-        <ul>
-            <li>Bounty Rewards (bitUSD)
-            <br />Based on OWASP severity scale and audit panel final review<br />&nbsp;</li>
-
-            <li>150 bitUSD/hour
-            <br />Audit panel member compensation (<a href="#audit-panel">more info</a>)<br />&nbsp;</li>
-        
-            <li>1000 bitUSD/month
-			<br />HackTheDEX.io Website/Services, Coordination, Reports<br />&nbsp;</li>
-			
-			<li>5% Escrow Disbersement Fee
-			<br /><a href="http://www.bitshares.foundation/">BitShares Blockchain Foundation</a> Escrow Services<br />&nbsp;</li>
-		</ul>
-		<li><strong>Proposal Period: 6 months</strong></li>
-    </ul>
-</div>
-
-<h2>Legal Information</h2>
-    <div>
-    The bug bounty program is an experimental and discretionary rewards program for 
-    our active community to encourage and reward those who are helping to improve 
-    the platform. It is not a competition. You should know that the voters may  
-    cancel the worker proposal at any time, and rewards are at the sole discretion of 
-    the auditing panel. In addition, we are not able to issue rewards to individuals 
-    who are on sanctions lists or who are in countries on sanctions lists 
-    (e.g. North Korea, Iran, etc). You are responsible for all taxes. 
-    All rewards are subject to applicable law. Finally, your testing must not violate 
-    any law or compromise any data that is not yours.
-    </div>    
-
-</div>
-</body>
+    <script src="scripts/vendor-bundle.js" data-main="aurelia-bootstrapper"></script>
+  </body>
 </html>

@@ -1,0 +1,31 @@
+<template>
+	<require from="elements/processing"></require>
+	<require from="elements/footer-bar"></require>
+	<require from="converters/date-format"></require>
+	<processing processing.bind="processing"></processing>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="col-lg-12 text-center dex-nobg">
+				<h1 class="display-4">Legal</h1>
+				<p class="lead"></p>
+			</div>
+			<div class="col-lg-12 bg-light">
+				<div class="col-md-12 text-left dex-2"> 
+					<p class="lead">
+						The bug bounty program is an experimental and discretionary rewards program for 
+						our active community to encourage and reward those who are helping to improve 
+						the platform. It is not a competition. You should know that the voters may  
+						cancel the worker proposal at any time, and rewards are at the sole discretion of 
+						the auditing panel. In addition, we are not able to issue rewards to individuals 
+						who are on sanctions lists or who are in countries on sanctions lists 
+						(e.g. North Korea, Iran, etc). You are responsible for all taxes. To be eligible for rewards, 
+						we require your real name and a proof of your identity. All rewards are subject to applicable law. 
+						Finally, your testing must not violate any law or compromise any data that is not yours.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer-bar />
+</template>

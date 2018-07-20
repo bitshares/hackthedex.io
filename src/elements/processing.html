@@ -1,0 +1,11 @@
+<template>
+	<div class="splash processing-container" if.bind="processing">
+		<div class="centered processing-block" if.bind="processing">
+			<div class="preloader"></div>
+			<div class="processing-message text-center">
+				<img src="/src/assets/images/preloader.gif" /><br />
+				Processing...
+			</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,87 @@
+<template>
+	<require from="elements/processing"></require>
+	<require from="elements/footer-bar"></require>
+	<require from="converters/date-format"></require>
+	<processing processing.bind="processing"></processing>
+
+	<div class="row">
+			<div class="col-lg-12">
+					<div class="col-lg-12 text-center dex-nobg"> 
+						<h1 class="display-4">Submit Report</h1>
+					</div>
+					<div class="col-lg-12 bg-light">
+						<div class="col-md-12 text-left dex-2">
+							<p class="lead text-center">If you have issues using this form, you may email us directly at <a href="mailto:submit@hackthedex.io">submit@hackthedex.io</a></p>
+
+							<form submit.delegate="submit()">
+								<div class="form-group">
+									<label for="name">Name</label>
+									<input value.bind="submission.name" type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your name" required>
+									<small id="nameHelp" class="form-text text-muted">You can use a pseudonym, however it will make you ineligible for bounty rewards</small>
+								</div>
+								
+								<div class="form-group">
+									<label for="email">Email Address</label>
+									<input value.bind="submission.email" type="email" class="form-control" id="email" placeholder="Enter your email" required>
+								</div>
+
+								<div class="form-group">
+									<label for="btsaccount">BitShares Account</label>
+									<input value.bind="submission.btsaccount" type="text" class="form-control" id="btsaccount" placeholder="Enter your BitShares account for bitUSD rewards" required>
+								</div>
+
+								<hr />
+								
+								<div class="form-group">
+									<label for="severity">Severity</label>
+									<select value.bind="submission.severity" class="form-control" id="severity" required>
+										<option selected>How severe would you rate this issue?</option>
+										<option value="note">Note/Informative</option>
+										<option value="low">Low Severity</option>
+										<option value="medium">Medium Severity</option>
+										<option value="high">High Severity</option>
+										<option value="critical">Critical Severity</option>
+									</select>
+								</div>
+								
+								<div class="alert alert-warning" if.bind="submission.severity == 'note'">If the issue you are submitting is not a security concern, but more of the general bug variety, please <a href="https://github.com/bitshares/" target="_blank">create an issue on GitHub</a> instead</div>
+
+								<div class="form-group">
+									<label for="summary">Issue Description</label>
+									<input value.bind="submission.summary" type="text" class="form-control" id="summary" placeholder="Short description of issue" required>
+								</div>
+
+								<div class="form-group">
+									<label for="repository">Affected Repository</label>
+									<input value.bind="submission.repository" type="text" class="form-control" id="repository" placeholder="e.g. bitshares-core" required>
+								</div>
+
+								<div class="form-group">
+									<label for="attackVector">Attack Vector</label>
+									<textarea value.bind="submission.attackVector" class="form-control" id="attackVector" rows="3" placeholder="Describe the scenario in full detail"></textarea>
+								</div>
+
+								<div class="form-group">
+									<label for="stepsToReproduce">Steps to Reproduce</label>
+									<textarea value.bind="submission.stepsToReproduce" class="form-control" id="stepsToReproduce" rows="3" placeholder="Example:
+1. Open DEX
+2. Navigate to ..."></textarea>
+								</div>
+									
+								<div class="form-group form-check">
+									<input checked.bind="submission.declineReward" type="checkbox" class="form-check-input" id="declineReward">
+									<label class="form-check-label" for="declineReward">I'd like to decline a reward</label>
+								</div>
+								<p class="lead">Please verify above is accurate and that you have included all steps to reproduce</p>
+								<button type="submit" class="btn btn-primary" disabled.bind="disableSubmit">Submit</button>
+							</form>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer-bar />
+</template>

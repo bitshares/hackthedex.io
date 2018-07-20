@@ -1,0 +1,91 @@
+<template>
+	<require from="elements/processing"></require>
+	<require from="elements/footer-bar"></require>
+	<require from="converters/date-format"></require>
+	<processing processing.bind="processing"></processing>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="col-lg-12 text-center dex-nobg"> 
+				<h1 class="display-4">Open Bounties</h1>
+				<p class="lead">Code repositories that are in scope (and&nbsp;what&nbsp;isn't)</p>
+			</div>
+			<div class="col-lg-12 bg-light">
+				<div class="col-md-12 text-left dex-2">
+					<h2 class="display-5">In Scope</h2>
+					<p class="lead">Security vulnerability bounties apply to the following source code repositories, with some exceptions:
+						<ul>
+							<li><a href="https://github.com/bitshares/bitshares-core">bitshares-core</a></li>
+							<li><a href="https://github.com/bitshares/bitshares-fc">bitshares-fc</a></li>
+							<li><a href="https://github.com/bitshares/bitshares-ui">bitshares-ui</a></li>
+							<li><a href="https://github.com/bitshares/bitsharesjs">bitsharesjs</a></li>
+							<li><a href="https://github.com/bitshares/bitsharesjs-ws">bitsharesjs-ws</a></li>
+							<li><a href="https://github.com/bitshares/python-bitshares">python-bitshares</a></li>
+						</ul>
+					</p>
+
+					<h2 class="display-5">Out of Scope</h2>
+					<p class="lead">
+						<ul>
+							<li>BitShares Marketing Websites (e.g. bitshares.org)</li>
+							<li>Third-Party Gateways</li>
+							<li>Flaws related to Outdated Software</li>
+							<li>Clickjacking without demonstrating a vulnerability</li>
+							<li>MITM Attacks requiring physical access to a user's device</li>
+							<li>Any sort of injection without demonstrating a vulnerability</li>
+						</ul>
+					</p>
+
+					<h2 class="display-5">Example Vulnerabilities</h2>
+					<p class="lead">Here are a few examples of generic blockchain issues to start your research. Note that not all of these are Delegated-Proof-of-Stake concerns, so consider it a general guideline.</p>
+
+					<h3><b>Protocol security</b></h3>
+					<p>
+					<ul>
+							<li>Graphene vulnerabilities</li>
+							<li>Validations of blocks, transactions and messages</li>
+							<li>Transaction execution</li>
+							<li>Message calls</li>
+					</ul>
+					</p>
+					<p>An example of a potential issue in this category is Bitcoin’s “zero-day” <a href="https://en.bitcoin.it/wiki/CVE-2010-5139">flaw</a>, which required a hard-fork.</p>
+					<h3><b>Network security</b></h3>
+					<p>
+					<ul>
+							<li>Finney attacks</li>
+							<li>Sybil attacks</li>
+							<li>Replay attacks</li>
+							<li>Transaction / messages malleability</li>
+							<li>(global) DoS</li>
+					</ul>
+					</p>
+					
+					<p>Here is an example from <a href="https://en.bitcoin.it/wiki/CVE-2012-4684">bitcoin</a> of a global network based DoS scenario.</p>
+					
+					<h3><b>Node security</b></h3>
+					<p>Attacks on witness or public API nodes</p>
+					<p>
+					<ul>
+							<li>DoS / resource abuse</li>
+							<li>Broadcast / withhold attacks</li>
+					</ul>
+					</p>
+					
+					<p>DoS example from <a href="https://bitcointalk.org/index.php?topic=287351">bitcoin</a>. DoS / Resource abuse example from <a href="https://en.bitcoin.it/wiki/CVE-2013-2293">bitcoin</a>.</p>
+					
+					<h3><b>Client application security</b></h3>
+					<p>This category addresses more classical security issues:</p>
+					<p>
+					<ul>
+							<li>Data type overflow / wrap around, e.g. integer overflow</li>
+							<li>Concurrency, e.g. synchronization, state, races</li>
+							<li>Severe issues related to external libraries used</li>
+					</ul>
+					</p>
+					
+					<p>Here is an <a href="http://bitcoinmagazine.com/3668/bitcoin-network-shaken-by-blockchain-fork/">example</a> of a problem hidden in an external library.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer-bar />
+</template>

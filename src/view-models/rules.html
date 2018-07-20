@@ -1,0 +1,57 @@
+<template>
+	<require from="elements/processing"></require>
+	<require from="elements/footer-bar"></require>
+	<require from="converters/date-format"></require>
+	<processing processing.bind="processing"></processing>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="col-lg-12 text-center dex-nobg"> 
+				<h1 class="display-4">Rules</h1>
+				<p class="lead">
+					The following rules guide the spirit of this bug bounty&nbsp;progam
+				</p>
+			</div>
+			<div class="col-lg-12 bg-light">
+				<div class="col-md-12 text-left dex-2"> 
+					<h3>General Rules</h3>
+					<ul class="lead">
+						<li>Public disclosure of a vulnerability makes it ineligible for a bounty</li>
+						<li>Your testing must not violate any law or compromise any data that is not yours</li>
+						<li>Issues that have already been submitted by another user or are already known to repository maintainers are not eligible for bounty rewards</li>
+						<li>Bounties will only be awarded for code repositories that are <a href="#/open-bounties">in scope</a></li>
+						<li>BitShares marketing websites and 3rd party websites/gateways are not eligible for bounties</li>
+						<li>Anyone involved in an audit panel or in the bug bounty program are not eligible to win bounty rewards</li>
+						<li>A number of variables contribute to determining if a disclosed vulnerability is eligible for a reward. How the vulnerability is scored, and the methods used to determine the score, are at the sole discretion of the panel chosen to audit the report</li>
+						<li>You should expect to provide your full name to claim bounty rewards</li>
+						<li>Once the bounty is awarded, feel free to share/blog/tweet/tell your mom about the exploit</li>
+					</ul>
+
+					<h3>What is an audit panel?</h3>
+
+					<p class="lead">
+						When a vulnerability is disclosed, care must be taken to minimize public disclosure until the issue can be verified by key developers and a bug fix can be released.
+						<br /><br />
+						Auditors that take the time to perform a thorough review of the vulnerability and/or write code to fix the bug 
+						will also be compensated appropriately. Sometimes, but not always, an auditor may need to work with the researcher(s) to 
+						come up with a solution to lock down the vulnerability.
+						<br /><br />
+						For transparency, each awarded bounty will include a public report along with which auditors were involved.
+					</p>
+
+					<h3>How are audit panel members selected?</h3>
+					<p class="lead">
+						When a vulnerability is reported, the panel will be selected from available <i>appropriately experienced and trusted</i> contributors within 
+						the respective BitShares development community. The primary points of contact below will be asked to coordinate appropriately experienced and active developers to audit the report and resolve all issues as quickly and safely as possible.
+						<ul class="lead">
+							<li><strong>BitShares Core Team:</strong> <a href="https://steemit.com/@fox">Ryan R. Fox</a></li>
+							<li><strong>BitShares UI Team:</strong> <a href="https://steemit.com/@billbutler">Bill Butler</a></li>
+							<li><strong>BitShares JS:</strong> <a href="https://steemit.com/@svk">Svk</a></li>
+							<li><strong>BitShares Python:</strong> <a href="https://steemit.com/@xeroc">Fabian Schuh</a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer-bar />
+</template>

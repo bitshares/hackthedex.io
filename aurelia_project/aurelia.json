@@ -1,0 +1,216 @@
+{
+  "name": "hackthedex.web",
+  "type": "project:application",
+  "platform": {
+    "id": "web",
+    "displayName": "Web",
+    "output": "scripts",
+    "index": "index.html",
+    "baseDir": "."
+  },
+  "transpiler": {
+    "id": "babel",
+    "displayName": "Babel",
+    "fileExtension": ".js",
+    "options": {
+      "plugins": [
+        "transform-es2015-modules-amd"
+      ]
+    },
+    "source": "src/**/*.js"
+  },
+  "markupProcessor": {
+    "id": "minimum",
+    "displayName": "Minimal Minification",
+    "fileExtension": ".html",
+    "source": "src/**/*.html"
+  },
+  "cssProcessor": {
+    "id": "none",
+    "displayName": "None",
+    "fileExtension": ".css",
+    "source": "src/**/*.css"
+  },
+  "editor": {
+    "id": "vscode",
+    "displayName": "Visual Studio Code"
+  },
+  "unitTestRunner": {
+    "id": "karma",
+    "displayName": "Karma",
+    "source": "test/unit/**/*.js"
+  },
+  "paths": {
+    "root": "src"
+  },
+  "testFramework": {
+    "id": "jasmine",
+    "displayName": "Jasmine"
+  },
+  "build": {
+    "targets": [
+      {
+        "id": "web",
+        "displayName": "Web",
+        "output": "scripts",
+        "index": "index.html",
+        "baseDir": "."
+      }
+    ],
+    "loader": {
+      "type": "require",
+      "configTarget": "vendor-bundle.js",
+      "includeBundleMetadataInConfig": "auto",
+      "plugins": [
+        {
+          "name": "text",
+          "extensions": [
+            ".html",
+            ".css"
+          ],
+          "stub": true
+        }
+      ]
+    },
+    "options": {
+      "minify": "stage & prod",
+      "sourcemaps": "dev & stage & localhost"
+    },
+    "bundles": [
+      {
+        "name": "app-bundle.js",
+        "source": [
+          "[**/*.js]",
+          "**/*.{css,html}"
+        ]
+      },
+      {
+        "name": "vendor-bundle.js",
+        "prepend": [
+          "node_modules/babel-polyfill/dist/polyfill.js",
+          "node_modules/bluebird/js/browser/bluebird.core.js",
+          "node_modules/aurelia-cli/lib/resources/scripts/configure-bluebird.js",
+          "node_modules/requirejs/require.js"
+        ],
+        "dependencies": [
+          "jquery",
+          "aurelia-binding",
+          "aurelia-bootstrapper",
+          {
+            "name": "aurelia-dialog",
+            "path": "../node_modules/aurelia-dialog/dist/amd",
+            "main": "aurelia-dialog"
+          },
+          "aurelia-dependency-injection",
+          "aurelia-event-aggregator",
+          "aurelia-framework",
+          "aurelia-history",
+          "aurelia-history-browser",
+          "aurelia-http-client",
+          "aurelia-loader",
+          "aurelia-loader-default",
+          "aurelia-logging",
+          "aurelia-logging-console",
+          "aurelia-metadata",
+          "aurelia-pal",
+          "aurelia-pal-browser",
+          "aurelia-path",
+          "aurelia-polyfills",
+          "aurelia-route-recognizer",
+          "aurelia-router",
+          "aurelia-task-queue",
+          {
+            "name": "aurelia-table",
+            "path": "../node_modules/au-table/dist/amd",
+            "main": "index",
+            "resources": [
+              "au-table-pagination.html"
+            ]
+          },
+          "aurelia-templating",
+          "aurelia-templating-binding",
+          {
+            "name": "aurelia-templating-resources",
+            "path": "../node_modules/aurelia-templating-resources/dist/amd",
+            "main": "aurelia-templating-resources"
+          },
+          {
+            "name": "aurelia-templating-router",
+            "path": "../node_modules/aurelia-templating-router/dist/amd",
+            "main": "aurelia-templating-router"
+          },
+          {
+            "name": "aurelia-testing",
+            "path": "../node_modules/aurelia-testing/dist/amd",
+            "main": "aurelia-testing",
+            "env": "dev & localhost"
+          },
+          {
+            "name": "aurelia-validation",
+            "path": "../node_modules/aurelia-validation/dist/amd",
+            "main": "aurelia-validation"
+          },
+          {
+            "name": "bootstrap",
+            "path": "../node_modules/bootstrap/dist",
+            "main": "js/bootstrap.min",
+            "deps": [
+              "jquery"
+            ],
+            "exports": "$",
+            "resources": [
+              "css/bootstrap.min.css"
+            ]
+          },
+          {
+            "name": "popper.js",
+            "path": "../node_modules/popper.js/dist/umd",
+            "main": "popper.min"
+          },
+          {
+            "name": "chart.js",
+            "path": "../node_modules/chart.js/dist",
+            "main": "Chart.min.js"
+          },
+          "chroma-js",
+          {
+            "name": "font-awesome",
+            "path": "../node_modules/font-awesome",
+            "main": "",
+            "resources": [
+              "css/font-awesome.min.css"
+            ]
+          },
+          "moment",
+          {
+            "name": "progressbar.js",
+            "path": "../node_modules/progressbar.js",
+            "main": "dist/progressbar.min.js"
+          },
+          "text",
+          "uuid-js",
+          {
+            "name": "aurelia-configuration",
+            "path": "../node_modules/aurelia-configuration/dist/amd",
+            "main": "index"
+          },
+          "esprima",
+          {
+            "name": "aurelia-fetch-client",
+            "main": "aurelia-fetch-client",
+            "path": "../node_modules/aurelia-fetch-client/dist/amd",
+            "resources": []
+          }
+        ]
+      }
+    ],
+    "copyFiles": {
+      "node_modules/font-awesome/fonts/fontawesome-webfont.woff": "font-awesome/fonts",
+      "node_modules/font-awesome/fonts/fontawesome-webfont.woff2": "font-awesome/fonts",
+      "node_modules/font-awesome/fonts/fontawesome-webfont.svg": "font-awesome/fonts",
+      "node_modules/font-awesome/fonts/fontawesome-webfont.ttf": "font-awesome/fonts",
+      "node_modules/font-awesome/fonts/fontawesome-webfont.eot": "font-awesome/fonts",
+      "node_modules/font-awesome/fonts/FontAwesome.otf": "font-awesome/fonts"
+    }
+  }
+}

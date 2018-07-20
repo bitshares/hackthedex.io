@@ -1,0 +1,39 @@
+<template>
+	<require from="elements/processing"></require>
+	<require from="elements/footer-bar"></require>
+	<require from="converters/date-format"></require>
+	<processing processing.bind="processing"></processing>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="col-lg-12 text-center dex-nobg">
+				<h1 class="display-4">Funding</h1>
+				<p class="lead">The BitShares Bug Bounty program is community-funded. Learn how the funds from the worker proposal are&nbsp;allocated.</p>
+			</div>
+			<div class="col-lg-12 bg-light">
+				<div class="col-md-12 text-left dex-2"> 
+					<h2 class="display-5">Where do these funds come from?</h2>
+					<p class="lead">The BitShares platform includes a self-funding community reserve pool. The reserve pool is filled using a variety of methods, such as transaction fees. Worker proposals voted in by the community (like this one) can draw funds from this pool to build things to improve the ecosystem.</p>
+					<br />
+					<h2 class="display-5">How are the funds allocated?</h2>
+					<p class="lead">Funds are held within an escrow account managed by the <a href="http://www.bitshares.foundation/">BitShares Blockchain Foundation</a>. At the end of the proposal period, <strong>any excess funds will be returned to the BitShares reserve pool</strong>.</p>
+					<ul class="lead">
+						<li>Total Budget of <strong>250,000 bitUSD</strong><br />
+						Refundable reserve via a BitShares Foundation <a href="http://www.bitshares.foundation/worker/">Budget Worker</a></li>
+						<li>Proposal Period of <strong>6 months</strong><br />
+						Allows sufficient time for security researchers to learn about BitShares and explore the code base</li>
+						<li><strong>How funds will be allocated:</strong>
+							<ul>
+								<li>Bounty Rewards (bitUSD)<br>Varies based on OWASP severity scale and audit panel final review</li>
+								<li><strong>150 bitUSD/hour</strong><br>Audit panel code review compensation</li>
+								<li><strong>1000 bitUSD/month</strong><br>Project Management/Coordination</li>
+								<li><strong>5%</strong> Escrow Disbersement Fee<br><a href="http://www.bitshares.foundation/">BitShares Blockchain Foundation</a> Escrow Services</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer-bar />
+</template>

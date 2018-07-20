@@ -1,0 +1,79 @@
+<template>
+	<require from="elements/processing"></require>
+	<require from="elements/footer-bar"></require>
+	<require from="converters/date-format"></require>
+	<processing processing.bind="processing"></processing>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="col-lg-12 text-center dex-nobg"> 
+				<h1 class="display-4">Rewards</h1>
+				<p class="lead">When you need just a bit of incentive to, you know, not exploit that&nbsp;hack</p>
+			</div>
+			<div class="col-lg-12 bg-light">
+				<div class="col-md-12 text-left dex-2">
+					<h2 class="display-5">What kind of reward can I get?</h2>
+					<p class="lead">
+						The amount of each reward will vary based on severity (guided by the <a href="https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology">OWASP method</a>). Rewards will be paid out from the worker proposal escrow account in bitUSD to a BitShares account specified by the reward recipient. We may be required by local law to ask for proof of identity before dispersing funds. Researchers who have been awarded bounties will also be listed on the <a href="#/leaderboard">leaderboard</a>.
+						<br /><br />
+						The audit panel will use the following severity scale and reward estimates as guidelines.
+					</p>
+
+					<p>	
+						<ul>
+							<li class="lead"><b>Critical</b>: up to 25,000 bitUSD</li>
+							<li class="lead"><b>High</b>: up to 10,000 bitUSD</li>
+							<li class="lead"><b>Medium</b>: up to 5,000 bitUSD</li>
+							<li class="lead"><b>Low</b>: up to 1,000 bitUSD</li>
+							<li class="lead"><b>Note</b>: up to 100 bitUSD</li>
+						</ul>
+					</p>
+					
+					<table id="risk">
+						<tbody>
+							<th colspan="5">
+								Overall Risk Severity
+							</th>
+							<tr>
+								<td class="impact" rowspan="3">Impact</td>
+								<td class="high y">HIGH</td>
+								<td class="medium">Medium</td>
+								<td class="high">High</td>
+								<td class="critical">Critical</td>
+							</tr>
+							<tr>
+								<td class="medium y">MEDIUM</td>
+								<td class="low">Low</td>
+								<td class="medium">Medium</td>
+								<td class="high">High</td>
+							</tr>
+							<tr>
+								<td class="low y">LOW</td>
+								<td class="note">Note</td>
+								<td class="low">Low</td>
+								<td class="medium">Medium</td>
+							</tr>
+							<tr>
+								<td class="noborder" colspan="2"></td>
+								<td class="low x">LOW</td>
+								<td class="medium x">MEDIUM</td>
+								<td class="high x">HIGH</td>
+							</tr>
+							<tr>
+								<td class="noborder" colspan="2"></td>
+								<td class="likelihood" colspan="3">Likelihood</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<p>
+						To qualify for higher rewards, the submission should include everything the auditing panel 
+						would need to reproduce and verify the vulnerability. The submission should also be 
+						well-prepared and of high quality so that it can be shared with the community as part 
+						of our transparency process.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer-bar />
+</template>

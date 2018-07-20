@@ -1,0 +1,39 @@
+<template>
+	<require from="converters/route-menu-filter"></require>
+	<require from="converters/object-debugger-value-converter"></require>
+
+	<nav class="navbar navbar-expand-sm navbar-light" role="navigation">
+		<a class="navbar-brand" href="/"><img src="src/assets/images/logo.svg"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div id="navbarWorker" class="navbar-widget" if.bind="workerActive">
+			<div class="funding">
+				<span class="reward-pool">Reward Pool</span>
+				<span class="reward-funds"><span class="currency-prefix">$</span>${currentFundingUSD}<span class="currency">bitUSD</span></span>
+			</div>
+			<div class="worker">
+				BitShares Worker <a href="https://www.bitshares.foundation/workers/2018-07-hackthedex" target="_blank">1.14.109</a>
+			</div>
+		</div>
+		<div id="navbarNav" class="collapse navbar-collapse justify-content-end">
+			<ul class="navbar-nav">
+				<li repeat.for="row of router.navigation | routeMenuFilter:'header'" class="nav-item ${row.isActive ? 'active' : ''} ${row.settings.hasSubmenu ? 'dropdown' : ''}">
+					<a if.bind="row.settings.hasSubmenu == true" href.bind="row.href" class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="nav-item-title">${row.title}</span>
+					</a>
+					<div if.bind="row.settings.hasSubmenu" class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a repeat.for="row2 of router.navigation | routeMenuFilter:row.settings.menuId" href.bind="row2.href" class="dropdown-item">${row2.title}</a>
+					</div>
+					<a if.bind="!row.settings.hasSubmenu" href.bind="row.href" class="nav-link">
+						<span class="nav-item-title">${row.title}</span>
+					</a>
+				</li>
+				<form class="form-inline">
+					<button class="btn btn-outline-primary" type="button" click.trigger="submitReport()">Submit Report</button> 
+				</form> 
+			</ul>
+		</div>
+	</nav>	
+	
+</template>

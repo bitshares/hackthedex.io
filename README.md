@@ -1,4 +1,4 @@
-# hackthedex.io
+# Hack The DEX
 ### a BitShares Worker Proposal
 
 ## Overview
