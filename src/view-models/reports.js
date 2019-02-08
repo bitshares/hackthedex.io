@@ -32,7 +32,7 @@ export class Reports {
 		},
 		{
 			name: "20181206A",
-			description: "Blockchain hault provocation",
+			description: "Blockchain halt provocation",
 			link: ""
 		}
 	];
