@@ -13,6 +13,7 @@
 			<table id="reports" class="table table-striped table-hover table-condensed">
 				<thead>
 					<th>Date</th>
+					<th>Type</th>
 					<th>Description</th>
 					<th>Link</th>
 				</thead>
@@ -24,8 +25,9 @@
 					</tr>
 					<tr if.bind="reports.length > 0" repeat.for="report of reports" role="button">
 						<td>${report.name}</td>
+						<td>${report.type}</td>
 						<td>${report.description}</td>
-						<td>${report.link}</td>
+						<td><a href="${report.link}">${report.name}</a></td>
 					</tr>
 				</tbody>
 			</table>

@@ -11,7 +11,7 @@
 					</div>
 					<div class="col-lg-12 bg-light">
 						<div class="col-md-12 text-left dex-2">
-							<p class="lead text-center">If you have issues using this form, you may email us directly at <a href="mailto:submit@hackthedex.io">submit@hackthedex.io</a></p>
+							<p class="lead text-center">If you have issues using this form, you may email us directly at <a href="mailto:submit@hackthedex.io">submit@hackthedex.io</a>. The form below will also call your local email client when submitting.</p>
 
 							<form submit.delegate="submit()">
 								<div class="form-group">
@@ -74,6 +74,9 @@
 								</div>
 								<p class="lead">Please verify above is accurate and that you have included all steps to reproduce</p>
 								<button type="submit" class="btn btn-primary" disabled.bind="disableSubmit">Submit</button>
+								<br />
+								<br />
+								<div class="alert alert-info" if.bind="!!submission.submitted">Thank you for the submission! Your email client should have opened with the details you have entered above.</div>
 							</form>
 							
 						</div>
