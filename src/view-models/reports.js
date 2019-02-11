@@ -7,32 +7,38 @@ export class Reports {
 	reports = [
 		{
 			name: "20180728A",
-			description: "Cross-site scripting (XSS) code injection",
+			type: "Cross-site scripting (XSS) code injection",
+			description: "BitShares UI: Asset description",
 			link: ""
 		},
 		{
 			name: "20180801A",
-			description: "Cross-site scripting (XSS) code injection",
+			type: "Cross-site scripting (XSS) code injection",
+			description: "BitShares UI: Memo message",
 			link: ""
 		},
 		{
 			name: "20180807E",
-			description: "Denial of Service through broadcasting prepared transactions",
+			type: "Denial of Service through broadcasting prepared transactions",
+			description: "BitShares Core: Nested Proposal",
 			link: ""
 		},
 		{
 			name: "20180918A",
-			description: "Cross-site scripting (XSS) code injection",
+			type: "Cross-site scripting (XSS) code injection",
+			description: "BitShares UI: TradingView Link",
 			link: ""
 		},
 		{
 			name: "20181008A",
-			description: "Subdomain takeover",
+			type: "Subdomain takeover",
+			description: "CNAME imposter of dev.bitshares.org",
 			link: ""
 		},
 		{
 			name: "20181206A",
-			description: "Blockchain halt provocation",
+			type: "Blockchain hault provocation",
+			description: "BitShares Core: Smartcoin supply number overflow",
 			link: ""
 		}
 	];
