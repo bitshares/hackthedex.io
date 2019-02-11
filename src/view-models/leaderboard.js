@@ -9,13 +9,19 @@ export class Leaderboard {
 			name: "Anonymous",
 			github: "htd.rmg.bounty42",
 			bugsReported: 3,
-			totalReward: 17333
+			totalReward: {
+				amount: 17333,
+				currency: "bitUSD"
+			}
 		},
 		{
 			name: "Valera Cogut",
 			github: "valera-hacked-dex",
 			bugsReported: 1,
-			totalReward: 15000
+			totalReward: {
+				amount: 15000,
+				currency: "bitUSD"
+			}
 		}
 	];
 
