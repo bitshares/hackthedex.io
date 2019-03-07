@@ -19,6 +19,7 @@ script:
 deploy:
   provider: pages
   local-dir: deploy/prod
+  fqdn: hackthedex.io
   skip-cleanup: true
   keep-history: true
   github-token: "$GITHUB_TOKEN"
