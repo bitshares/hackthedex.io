@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+- stable
+sudo: false
+notifications:
+  email: false
+cache:
+  directories:
+  - node_modules
+branches:
+  only:
+  - master
+install:
+- npm install -g aurelia-cli
+- npm install
+before_script: 
+script:
+- "./build-prod.sh"
+deploy:
+  provider: pages
+  local-dir: deploy/prod
+  skip-cleanup: true
+  keep-history: true
+  github-token: "$GITHUB_TOKEN"
+  on:
+    branch: master
+env:
+  global:
+    secure: O+QxxePhF6tcrQgC7FHnWHyJeRbl0dZAdGwlUC3M16aXwjl8+z+5tUUbx8gtfaq83Se0E6s+ITlclXN1zTgujVS0XjbEmq1oPYY5pgM280qaEcgvUvqiJY2YOUnZNfZikr9VLOKVSBmPfLxOM9YRoJLOvFdJhqc7L6QkyeCgNwyp6s86Xfbu1+HETBgmio2c9gzPfqz5ZaSilg5VcVogIQpbTXVPcOoNWuoknVshpZ9U59ttncyIX6F9FpUr9xQIezgSPYxZ+MQvYHZKbg9agrZUBphs9N6WPsU8u0PSYGXlkOg0cPpJVa0q8nHBiOHga6Ug8KPOGV4C8BvqSAG+XTOynygfZDQBq1CC5GeDgjpoSzg5VfrTZhgNa3XMgrdVNRzn6MjBN5UWAJBFs3cG9j6wC1WNRIoEOaI266wA9ROoQLszR77pTCivb0Hz0e/Im3f1FWG08gQqiH4mp75MSBj9jKRx0BFdbxSQhx4mTvHIazwqwMmZECw2vNmQ82b/vZRavdZqnzfz3k5gNKQDJJFR6QRJaOBpTrA7w5jjAU7I6yJE+7l+a1Xd6I9BuvXG4sb39lPy/Ualw5Xxngs1yl3jCpckfsqzemdIG/rVx034RwtRVrQwoI+RUxGHoJSllS31G+zCVO86qWH4glRJu/BpH0KVOh5I8LROwVf9KwA=
