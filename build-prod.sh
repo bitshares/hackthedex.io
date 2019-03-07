@@ -14,4 +14,4 @@ cp -R node_modules/font-awesome deploy/prod/node_modules/
 cp -R scripts deploy/prod/
 cp -R src/assets deploy/prod/src/
 
-cd deploy/prod && tar -cvzf ../../deploy-prod.tar.gz .
+# cd deploy/prod && tar -cvzf ../../deploy-prod.tar.gz .
