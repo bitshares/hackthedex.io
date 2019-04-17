@@ -40,6 +40,24 @@ export class Reports {
 			type: "Blockchain hault provocation",
 			description: "BitShares Core: Smartcoin supply number overflow",
 			link: "/src/assets/reports/Report 20181206A.pdf"
+		},
+		{
+			name: "20181221A",
+			type: "Private Key Reconstruction",
+			description: "Faulty random number generator",
+			link: "/src/assets/reports/Report 20181221A.pdf"
+		},
+				{
+			name: "20181222",
+			type: "Node crash provocation",
+			description: "BitShares Core: Memory exhaustion attack",
+			link: "/src/assets/reports/Report 20181222.pdf"
+		},
+		{
+			name: "20190103",
+			type: "Impersonation",
+			description: "Wiki edit",
+			link: "/src/assets/reports/Report 20190103.pdf"
 		}
 	];
 

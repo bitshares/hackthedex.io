@@ -22,7 +22,43 @@ export class Leaderboard {
 				amount: 15000,
 				currency: "bitUSD"
 			}
-		}
+		},
+		{
+			name: "Anonymous",
+			github: "to be paid",
+			bugsReported: 1,
+			totalReward: {
+				amount: 3750,
+				currency: "bitUSD"
+			}
+		},
+		{
+			name: "Anonymous",
+			github: "to be paid",
+			bugsReported: 1,
+			totalReward: {
+				amount: 3667,
+				currency: "bitUSD"
+			}
+		},
+		{
+			name: "Anonymous",
+			github: "to be paid",
+			bugsReported: 1,
+			totalReward: {
+				amount: 400,
+				currency: "bitUSD"
+			}
+		},
+		{
+			name: "Anonymous",
+			github: "to be paid",
+			bugsReported: 1,
+			totalReward: {
+				amount: 333,
+				currency: "bitUSD"
+			}
+		},
 	];
 
 	constructor(router) {
