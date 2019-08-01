@@ -6,7 +6,7 @@
 
 	<div class="row">
 			<div class="col-lg-12">
-					<div class="col-lg-12 text-center dex-nobg"> 
+					<div class="col-lg-12 text-center dex-nobg">
 						<h1 class="display-4">Submit Report</h1>
 					</div>
 					<div class="col-lg-12 bg-light">
@@ -19,7 +19,7 @@
 									<input value.bind="submission.name" type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your name" required>
 									<small id="nameHelp" class="form-text text-muted">You can use a pseudonym, however it will make you ineligible for bounty rewards</small>
 								</div>
-								
+
 								<div class="form-group">
 									<label for="email">Email Address</label>
 									<input value.bind="submission.email" type="email" class="form-control" id="email" placeholder="Enter your email" required>
@@ -31,7 +31,7 @@
 								</div>
 
 								<hr />
-								
+
 								<div class="form-group">
 									<label for="severity">Severity</label>
 									<select value.bind="submission.severity" class="form-control" id="severity" required>
@@ -43,7 +43,7 @@
 										<option value="critical">Critical Severity</option>
 									</select>
 								</div>
-								
+
 								<div class="alert alert-warning" if.bind="submission.severity == 'note'">If the issue you are submitting is not a security concern, but more of the general bug variety, please <a href="https://github.com/bitshares/" target="_blank">create an issue on GitHub</a> instead</div>
 
 								<div class="form-group">
@@ -67,7 +67,7 @@
 1. Open DEX
 2. Navigate to ..."></textarea>
 								</div>
-									
+
 								<div class="form-group form-check">
 									<input checked.bind="submission.declineReward" type="checkbox" class="form-check-input" id="declineReward">
 									<label class="form-check-label" for="declineReward">I'd like to decline a reward</label>
@@ -76,9 +76,9 @@
 								<button type="submit" class="btn btn-primary" disabled.bind="disableSubmit">Submit</button>
 								<br />
 								<br />
-								<div class="alert alert-info" if.bind="!!submission.submitted">Thank you for the submission! Your email client should have opened with the details you have entered above.</div>
+								<div class="alert alert-info" if.bind="!!submission.submitted">Thank you for the submission! Your email client should have opened with the details you have entered above. If not, please manually submit to <a href="mailto:submit@hackthedex.io">submit@hackthedex.io</a></div>
 							</form>
-							
+
 						</div>
 					</div>
 				</div>

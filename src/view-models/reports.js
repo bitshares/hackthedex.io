@@ -58,6 +58,18 @@ export class Reports {
 			type: "Impersonation",
 			description: "Wiki edit",
 			link: "/src/assets/reports/Report 20190103.pdf"
+		},
+		{
+			name: "20190122",
+			type: "Cross-site scripting (XSS) code injection",
+			description: "BitShares UI: Voting Panel",
+			link: "/src/assets/reports/Report 20190122 Stored XSS in voting links.pdf"
+		},
+		{
+			name: "20190307",
+			type: "Reverse tabnabbing",
+			description: "BitShares UI: Voting Panel",
+			link: "/src/assets/reports/Report 20190307 Stealing User Credentials.pdf"
 		}
 	];
 

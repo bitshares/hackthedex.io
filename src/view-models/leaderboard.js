@@ -8,9 +8,9 @@ export class Leaderboard {
 		{
 			name: "Anonymous",
 			github: "htd.rmg.bounty42",
-			bugsReported: 3,
+			bugsReported: 4,
 			totalReward: {
-				amount: 17333,
+				amount: 21333,
 				currency: "bitUSD"
 			}
 		},
@@ -20,6 +20,15 @@ export class Leaderboard {
 			bugsReported: 1,
 			totalReward: {
 				amount: 15000,
+				currency: "bitUSD"
+			}
+		},
+		{
+			name: "Anonymous",
+			github: "ngoplani88",
+			bugsReported: 1,
+			totalReward: {
+				amount: 4000,
 				currency: "bitUSD"
 			}
 		},
@@ -43,7 +52,7 @@ export class Leaderboard {
 		},
 		{
 			name: "Anonymous",
-			github: "to be paid",
+			github: "pro-abiral",
 			bugsReported: 1,
 			totalReward: {
 				amount: 400,
@@ -52,7 +61,7 @@ export class Leaderboard {
 		},
 		{
 			name: "Anonymous",
-			github: "to be paid",
+			github: "mkzreport13",
 			bugsReported: 1,
 			totalReward: {
 				amount: 333,
