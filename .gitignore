@@ -1,6 +1,5 @@
 deploy-dev.tar.gz
 deploy/
 export/
-scripts/
 *.gz
-node_modules
+node_modules/
