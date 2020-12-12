@@ -1,3 +1,5 @@
+# NOTE: This project is archived due to lack of maintenance. The domain name has expired and has been squatted by an unknown 3rd party.
+
 # Hack The DEX
 ### a BitShares Worker Proposal
 
