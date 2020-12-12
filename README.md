@@ -15,4 +15,4 @@ The proposal will use allocated funds to reward those that step forward with exp
 Funds will also be used to build and maintain a basic public website for reporting vulnerabilities. The website will include all the information needed for researchers to report a vulnerability, as well as an archive of bounty reports and a leaderboard to encourage a little friendly hacker competition. It will also lay the groundwork for future HackTheDEX worker proposals to improve the security and safety of BitShares as a whole.
 Worker proposal funds will be held in an escrow account and unused funds will be refunded back to the network at the end of the proposal period.
 
-Continue to [HackTheDEX.io](https://hackthedex.io/)
+Continue to <del>[HackTheDEX.io](#overview)</del> (update: the domain name is no longer owned by us).
